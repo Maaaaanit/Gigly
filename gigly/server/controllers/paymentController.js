@@ -9,10 +9,15 @@ const { success, error } = require('../utils/apiResponse');
 const { notify } = require('../utils/notificationHelper');
 const { sendEmail, templates } = require('../utils/emailSender');
 
-const razorpay = new Razorpay({
-  key_id: process.env.RAZORPAY_KEY_ID,
-  key_secret: process.env.RAZORPAY_KEY_SECRET,
-});
+const getRazorpay = () => {
+  if (!process.env.RAZORPAY_KEY_ID || !process.env.RAZORPAY_KEY_SECRET) {
+    return null; // mock mode
+  }
+  return new Razorpay({
+    key_id: process.env.RAZORPAY_KEY_ID,
+    key_secret: process.env.RAZORPAY_KEY_SECRET
+  });
+};
 
 exports.createOrder = async (req, res) => {
   try {
