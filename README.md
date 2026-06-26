@@ -133,8 +133,7 @@ EMAIL_PORT=587
 EMAIL_USER=your_email@gmail.com
 EMAIL_PASS=your_gmail_app_password
 CLIENT_URL=http://localhost:5173
-RAZORPAY_KEY_ID=rzp_test_xxxxxxxxxxxx
-RAZORPAY_KEY_SECRET=your_razorpay_key_secret
+
 ```
 
 ### 3. Set up the client
@@ -150,7 +149,7 @@ Edit `.env`:
 ```env
 VITE_API_URL=http://localhost:5000/api
 VITE_SOCKET_URL=http://localhost:5000
-VITE_RAZORPAY_KEY_ID=rzp_test_xxxxxxxxxxxx
+
 ```
 
 ### 4. Seed the admin user
@@ -221,8 +220,7 @@ All endpoints are prefixed with `/api`.
 | `EMAIL_USER` | SMTP sender email |
 | `EMAIL_PASS` | SMTP password / Gmail App Password |
 | `CLIENT_URL` | Frontend origin for CORS (e.g. `http://localhost:5173`) |
-| `RAZORPAY_KEY_ID` | Razorpay API key ID |
-| `RAZORPAY_KEY_SECRET` | Razorpay API key secret |
+
 
 ### Client (`gigly/client/.env`)
 
@@ -230,7 +228,7 @@ All endpoints are prefixed with `/api`.
 |---|---|
 | `VITE_API_URL` | Backend API base URL |
 | `VITE_SOCKET_URL` | Socket.io server URL |
-| `VITE_RAZORPAY_KEY_ID` | Razorpay key ID (public, test or live) |
+
 
 ---
 
