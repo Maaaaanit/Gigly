@@ -14,7 +14,11 @@ const app = express();
 const server = http.createServer(app);
 
 const io = new Server(server, {
-  cors: { origin: process.env.CLIENT_URL, methods: ['GET', 'POST'], credentials: true },
+  cors: {
+    origin: ["http://localhost:5173", process.env.CLIENT_URL],
+    methods: ['GET', 'POST'],
+    credentials: true,
+  },
 });
 
 // Socket.io — real-time chat
@@ -46,7 +50,10 @@ io.on('connection', (socket) => {
 });
 
 app.use(helmet({ crossOriginResourcePolicy: { policy: 'cross-origin' } }));
-app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
+app.use(cors({
+  origin: ["http://localhost:5173", process.env.CLIENT_URL],
+  credentials: true,
+}));
 app.use(morgan('dev'));
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));

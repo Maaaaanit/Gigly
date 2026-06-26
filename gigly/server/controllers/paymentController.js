@@ -26,7 +26,7 @@ exports.createOrder = async (req, res) => {
     if (invoice.clientId.toString() !== req.user._id.toString()) return error(res, 'Forbidden', 403);
     if (invoice.status === 'paid') return error(res, 'Invoice already paid', 400);
 
-    const order = await razorpay.orders.create({
+    const order = await getRazorpay().orders.create({
       amount: Math.round(invoice.totalAmount * 100),
       currency: 'INR',
       receipt: invoice.invoiceNumber,
