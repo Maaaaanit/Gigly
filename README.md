@@ -103,8 +103,7 @@ Gigly/
 
 - Node.js v18+
 - A [MongoDB Atlas](https://www.mongodb.com/atlas) account and cluster
-- A [Razorpay](https://razorpay.com) account (test keys are fine for development)
-- A Gmail account with an [App Password](https://support.google.com/accounts/answer/185833) for email
+
 
 ### 1. Clone the repository
 
